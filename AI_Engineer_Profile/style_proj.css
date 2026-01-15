@@ -1,0 +1,242 @@
+/* =========================
+   GLOBAL RESET & VARIABLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark-brown: #1b120c;
+    --heading-brown: #c2a27c;
+    --text-white: #ffffff;
+    --sidebar-brown: #24160f;
+    --box-brown: #2e1d14;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background-color: var(--bg-dark-brown);
+    color: var(--text-white);
+    font-family: "Segoe UI", sans-serif;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR (UNCHANGED)
+========================= */
+.sidebar {
+    width: 160px; /* keep as in your original code */
+    background-color: var(--sidebar-brown);
+    padding-top: 2rem;
+    position: fixed;
+    right: 0;      
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 1.2rem;
+}
+
+.sidebar li a {
+    padding-left: 2.5rem;
+    color: var(--heading-brown);
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+}
+
+.sidebar li a:hover {
+    color: white;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+    padding-left: 0;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* left align icons */
+    gap: 0.6rem;
+}
+
+.social-icons a img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(17%) saturate(403%) hue-rotate(353deg);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.15);
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* =========================
+   ROLE SELECTION OVERLAY
+========================= */
+#role-selection {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-dark-brown);
+    z-index: 1000;
+}
+
+/* =========================
+   MAIN CONTENT FIX (NEW)
+========================= */
+.main-content {
+    margin-right: 160px; /* leave space for sidebar */
+    padding: 2rem;       /* optional padding inside content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-right: 120px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        margin-right: 0;
+        padding: 1rem;
+    }
+}
+
+
+
+
+
+
+
+/* =========================
+   PROJECTS PAGE LAYOUT
+========================= */
+
+.projects-container {
+    min-height: 100vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* =========================
+   PROJECT BOX
+========================= */
+
+.project-box {
+    background-color: var(--box-brown);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+/* LEFT SIDE */
+.project-left {
+    flex: 2;
+}
+
+.project-left h2 {
+    color: var(--heading-brown);
+    margin-bottom: 1rem;
+}
+
+.project-left p {
+    color: var(--text-white);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+/* TECH STACK */
+.tech-stack {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tech-stack span {
+    background-color: #3a2618;
+    color: var(--heading-brown);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid var(--heading-brown);
+}
+
+/* RIGHT SIDE */
+.project-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PROJECT IMAGE */
+.project-right img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+    object-fit: cover;
+}
+
+/* LINKS BUTTONS */
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.project-links a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--heading-brown);
+    border: 1px solid var(--heading-brown);
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+    background-color: var(--heading-brown);
+    color: var(--bg-dark-brown);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .project-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-right img {
+        max-width: 100%;
+    }
+}

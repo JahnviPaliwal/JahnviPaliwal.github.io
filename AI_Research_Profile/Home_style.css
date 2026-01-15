@@ -1,0 +1,251 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COLORS */
+:root {
+    --bg-white: #ffffff;
+    --heading-dark-blue: #1a237e;
+    --subheading-light-blue: #7986cb;
+    --text-dark: #222222;
+    --sidebar-bg: #e8eaf6;
+    --box-bg: #c5cae9;
+}
+
+/* BODY */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 160px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--sidebar-bg);
+    padding-top: 2rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 1.2rem;
+}
+
+.sidebar a {
+    display: block;
+    color: var(--heading-dark-blue);
+    text-decoration: none;
+    padding-left: 1.5rem;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: var(--subheading-light-blue);
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+}
+
+.social-icons a img {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.15);
+}
+
+/* MAIN CONTENT */
+#content {
+    flex: 1;
+    margin-right: 180px; /* space for sidebar */
+    padding: 3rem;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    gap: 20rem;
+    align-items: center;
+    margin-bottom: 4rem;
+    
+}
+
+.hero-text .name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--heading-dark-blue);
+}
+
+.hero-text .subtitle {
+    font-size: 1rem;
+    color: var(--subheading-light-blue);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.hero-text p {
+    margin: 1rem 0 1.5rem 0;
+    line-height: 1.5;
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 2px solid var(--heading-dark-blue);
+    color: var(--heading-dark-blue);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    background-color: var(--heading-dark-blue);
+    color: var(--bg-white);
+}
+
+/* HERO IMAGE */
+.hero-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid var(--heading-dark-blue);
+    object-fit: cover;
+}
+
+/* RESEARCH FOCUS SECTIONS */
+.research-focus h2 {
+    color: var(--heading-dark-blue);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.research-box {
+    background-color: var(--box-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+
+
+
+/* ================= ACADEMIC PAGE ================= */
+
+.academic-section {
+    margin-top: 4rem;
+}
+
+.academic-section h2 {
+    color: var(--heading-dark-blue);
+    margin-bottom: 1.2rem;
+}
+
+.academic-section h3 {
+    color: var(--heading-dark-blue);
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.academic-section h4 {
+    color: var(--subheading-light-blue);
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.academic-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    max-width: 900px;
+}
+
+.academic-section ul {
+    margin-left: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.academic-section li {
+    margin-bottom: 0.4rem;
+}
+
+/* Research blocks */
+.research-block {
+    background-color: var(--box-bg);
+    padding: 1.8rem;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+}
+
+/* Chart placeholders */
+.chart-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.chart-placeholder {
+    height: 180px;
+    background-color: var(--bg-white);
+    border: 2px dashed var(--subheading-light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--subheading-light-blue);
+}
+
+/* Research focus list under hero */
+.research-focus ul {
+    margin-left: 1.2rem;
+}
+
+.research-focus li {
+    margin-bottom: 0.5rem;
+}
+
+
+
+.model-performance {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* mobile responsive */
+}
+
+.model-desc {
+    flex: 1;
+    max-width: 900px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+.model-graph img {
+    min-width: 400px;
+    height: 150px;
+    border: 1px solid var(--box-bg);
+    border-radius: 6px;
+}

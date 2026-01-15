@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Letters of Recommendation | Jahnvi Paliwal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home_style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #ffffff;
+            color: #222;
+            user-select: none;
+        }
+
+        .lor-container {
+            padding: 3rem;
+        }
+
+        h1 {
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+
+        .note {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .lor-box {
+            margin-bottom: 4rem;
+            position: relative;
+            border: 2px solid #c5cae9;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* PDF Viewer */
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            pointer-events: auto;
+        }
+
+        /* Watermark */
+        .watermark {
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(
+                -30deg,
+                rgba(26,35,126,0.08) 0px,
+                rgba(26,35,126,0.08) 1px,
+                transparent 1px,
+                transparent 80px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: rgba(26,35,126,0.15);
+            pointer-events: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <nav class="sidebar">
+        <ul>
+            <li><a href="AI_res_home.html">Home</a></li>
+            <!-- <li><a href="exp.html">Experience</a></li>
+            <li><a href="certi.html">Certifications</a></li>
+            <li><a href="proj.html">Projects</a></li> -->
+            <li><a href="reff.html">References</a></li>
+            <li><a href="../index.html">Switch<br>Profile</a></li>
+        </ul>
+
+        <div class="social-icons">
+            <!-- <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <img src="../icons/linkedin.svg" alt="LinkedIn">
+            </a> -->
+        
+            <a href="mailto:paliwaljnv08@gmail.com">
+                <img src="../icons/email.svg" alt="Email">
+            </a>
+            <!-- <a href="https://www.kaggle.com/yourprofile" target="_blank">
+                <img src="kaggle.png" alt="Kaggle">
+            </a>
+            <a href="https://www.leetcode.com/yourprofile" target="_blank">
+                <img src="leetcode.png" alt="LeetCode">
+            </a> -->
+        </div>
+    </nav>
+
+<div class="lor-container">
+
+    <h1>Letters of Recommendation</h1>
+
+    <p class="note">
+        These Letters of Recommendation are shared strictly for viewing purposes.
+        Downloading, copying, or reproducing this content is not permitted.
+    </p>
+
+    <!-- LOR 1 -->
+    <div class="lor-box">
+        <iframe 
+            src="../LOR/Vimla_Mam_LOR_2025.pdf#toolbar=0&navpanes=0&scrollbar=0">
+        </iframe>
+        <div class="watermark">
+            Confidential • Jahnvi Paliwal
+        </div>
+    </div>
+
+    <!-- LOR 2 -->
+    <!-- <div class="lor-box">
+        <iframe 
+            src="../LOR/LOR_Naresh.pdf#toolbar=0&navpanes=0&scrollbar=0">
+        </iframe>
+        <div class="watermark">
+            Confidential • Jahnvi Paliwal
+        </div>
+    </div> -->
+
+</div>
+
+<script>
+    // Disable right click
+    document.addEventListener("contextmenu", e => e.preventDefault());
+
+    // Disable key shortcuts
+    document.addEventListener("keydown", function(e) {
+        if (
+            (e.ctrlKey && ["s", "p", "c", "u"].includes(e.key.toLowerCase())) ||
+            e.key === "PrintScreen"
+        ) {
+            e.preventDefault();
+            alert("Restricted: Viewing only");
+        }
+    });
+
+    // Blur content when tab is inactive (anti screen-recording deterrent)
+    document.addEventListener("visibilitychange", function () {
+        document.body.style.filter =
+            document.hidden ? "blur(8px)" : "none";
+    });
+</script>
+
+</body>
+</html>

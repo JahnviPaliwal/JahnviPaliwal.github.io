@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark-brown: #1b120c;
+    --heading-brown: #c2a27c;
+    --text-white: #ffffff;
+    --sidebar-brown: #24160f;
+    --box-brown: #2e1d14;
+}
+
+/* BODY */
+body {
+    background-color: var(--bg-dark-brown);
+    color: var(--text-white);
+    font-family: "Segoe UI", sans-serif;
+}
+
+
+/* =========================
+   ROLE SELECTION PAGE
+========================= */
+
+.role-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    /* Smooth 7-stop gradient from dark brown to dark blue */
+    background: linear-gradient(
+        90deg,
+        #1b120c 0%,   /* dark brown */
+        #1e140f 15%,
+        #231710 30%,
+        #281b15 45%,
+        #1a1f4d 60%,
+        #162174 80%,
+        #1a237e 100%   /* dark blue */
+    );
+}
+
+
+
+.role-page h1 {
+    color: #ffffff;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+}
+
+.role-page small {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+}
+
+
+.role-buttons {
+    display: flex;
+    gap: 2.5rem;
+}
+
+/* Base button */
+.role-btn {
+    text-decoration: none;
+    padding: 14px 34px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* LEFT BUTTON — Dark Brown */
+.left-btn {
+    color: #ffffff;
+    border: 2px solid #8d6e63;
+    background-color: transparent;
+}
+
+.left-btn:hover {
+    background-color: #8d6e63;
+    color: #3e2723;
+}
+
+/* RIGHT BUTTON — Dark Blue */
+.right-btn {
+    color: #e3f2fd;
+    border: 2px solid #90caf9;
+    background-color: transparent;
+}
+
+.right-btn:hover {
+    background-color: #90caf9;
+    color: #1a237e;
+}
+
+
+
+
+/* PORTFOLIO LAYOUT */
+#portfolio {
+    display: flex;
+    min-height: 100vh;
+}
+
+#content {
+    flex: 1;
+    padding: 4rem 5rem;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--heading-brown);
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #d8c2a3;
+}
+
+.description {
+    margin: 1.5rem 0;
+    max-width: 520px;
+    line-height: 1.7;
+}
+
+/* RESUME BUTTON */
+.resume-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: 2px solid var(--heading-brown);
+    color: var(--heading-brown);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+    background-color: var(--heading-brown);
+    color: var(--bg-dark-brown);
+}
+
+/* IMAGE */
+.hero-image img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--heading-brown);
+}
+
+/* SKILLS */
+.skills h2 {
+    margin-bottom: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.skill-box {
+    background-color: var(--box-brown);
+    padding: 1.8rem;
+    border-radius: 10px;
+    min-height: 340px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 150px;
+    background-color: var(--sidebar-brown);
+    padding-top: 4rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+
+}
+
+.sidebar li {
+    margin-bottom: 1.2rem;
+}
+
+.sidebar li a {
+    padding-left: 2.5rem;
+}
+
+.sidebar a {
+    color: var(--heading-brown);
+    text-decoration: none;
+    padding-left: 2rem;
+    display: block;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: white;
+}
+
+/* UTILITY */
+.hidden {
+    display: none !important;
+}
+
+
+#role-selection {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-dark-brown);
+    z-index: 1000;
+}
+
+/* SOCIAL ICONS IN SIDEBAR */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+    padding-left: 0; /* remove any extra padding */
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* left align icons */
+    gap: 0.6rem; /* small gap if you want text next to icon in future */
+}
+
+.social-icons a img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(17%) saturate(403%) hue-rotate(353deg);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.15);
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+
+/* =========================
+   INLINE SKILL BARS (MINIMAL)
+========================= */
+
+.skill-item {
+    position: relative;
+    padding-left: 55px; /* space for bar */
+    font-size: 0.95rem;
+}
+
+/* Empty bar */
+.skill-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 6px;
+    background-color: #3a261b;
+    border-radius: 4px;
+}
+
+/* Filled bar */
+.skill-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 6px;
+    background-color: var(--heading-brown);
+    border-radius: 4px;
+}
+
+/* =========================
+   PROFICIENCY LEVELS
+========================= */
+
+.skill-item.python::after { width: 45px; }
+.skill-item.java::after { width: 30px; }
+.skill-item.cpp::after { width: 35px; }
+.skill-item.golang::after { width: 25px; }
+.skill-item.dart::after { width: 15px; }
+.skill-item.html::after { width: 40px; }
+.skill-item.json::after { width: 35px; }
+.skill-item.golang::after { width: 15px; }
+
+.skill-item.frontend::after { width: 36px; }
+
+.skill-item.ml::after { width: 44px; }
+.skill-item.dl::after { width: 41px; }
+.skill-item.nlp::after { width: 42px; }
+.skill-item.rag::after { width: 38px; }
+.skill-item.cnn::after { width: 31px; }
+.skill-item.llm::after { width: 33px; }

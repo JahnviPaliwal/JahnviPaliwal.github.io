@@ -1,0 +1,182 @@
+/* =========================
+   GLOBAL RESET & VARIABLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark-brown: #1b120c;
+    --heading-brown: #c2a27c;
+    --text-white: #ffffff;
+    --sidebar-brown: #24160f;
+    --box-brown: #2e1d14;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background-color: var(--bg-dark-brown);
+    color: var(--text-white);
+    font-family: "Segoe UI", sans-serif;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR (UNCHANGED)
+========================= */
+.sidebar {
+    width: 160px; /* keep as in your original code */
+    background-color: var(--sidebar-brown);
+    padding-top: 2rem;
+    position: fixed;
+    right: 0;      
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 1.2rem;
+}
+
+.sidebar li a {
+    padding-left: 2.5rem;
+    color: var(--heading-brown);
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+}
+
+.sidebar li a:hover {
+    color: white;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+    padding-left: 0;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* left align icons */
+    gap: 0.6rem;
+}
+
+.social-icons a img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(17%) saturate(403%) hue-rotate(353deg);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.15);
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* =========================
+   ROLE SELECTION OVERLAY
+========================= */
+#role-selection {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-dark-brown);
+    z-index: 1000;
+}
+
+/* =========================
+   MAIN CONTENT FIX (NEW)
+========================= */
+.main-content {
+    margin-right: 160px; /* leave space for sidebar */
+    padding: 2rem;       /* optional padding inside content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-right: 120px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        margin-right: 0;
+        padding: 1rem;
+    }
+}
+
+/* =========================
+   CERTIFICATIONS GRID
+========================= */
+.certifications {
+    margin: 1rem 0;
+}
+
+.certifications h2 {
+    color: var(--heading-brown);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    /* justify-items: center; */
+}
+
+.cert-box {
+    background-color: var(--box-brown);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.cert-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(194, 162, 124, 0.5);
+}
+
+.cert-box img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.cert-box h3 {
+    font-size: 1rem;
+    color: var(--heading-brown);
+    margin-bottom: 0.5rem;
+}
+
+.cert-box small {
+    font-size: 0.75rem;
+    color: #d8c2a3;
+}
+
+/* =========================
+   UTILITY
+========================= */
+.hidden {
+    display: none !important;
+}

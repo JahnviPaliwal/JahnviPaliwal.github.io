@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jahnvi Paliwal | Academic Profile</title>
+    <link rel="stylesheet" href="Home_style.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="AI_res_home.html">Home</a></li>
+            <!-- <li><a href="exp.html">Experience</a></li>
+            <li><a href="certi.html">Certifications</a></li>
+            <li><a href="proj.html">Projects</a></li> -->
+            <li><a href="reff.html">References</a></li>
+            <li><a href="../index.html">Switch<br>Profile</a></li>
+        </ul>
+
+        <div class="social-icons">
+            <!-- <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <img src="../icons/linkedin.svg" alt="LinkedIn">
+            </a> -->
+        
+            <a href="mailto:paliwaljnv08@gmail.com">
+                <img src="../icons/email.svg" alt="Email">
+            </a>
+            <!-- <a href="https://www.kaggle.com/yourprofile" target="_blank">
+                <img src="kaggle.png" alt="Kaggle">
+            </a>
+            <a href="https://www.leetcode.com/yourprofile" target="_blank">
+                <img src="leetcode.png" alt="LeetCode">
+            </a> -->
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="content">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="name">Jahnvi Paliwal</h1>
+                <span class="subtitle">
+                    Student @ IET, Mohanlal Sukhadiya University
+                </span>
+
+                <p>
+                    I am a student with strong interests in applied machine learning and data-driven research.<br>
+                    My academic work focuses on intelligent systems for healthcare and financial data.<br>
+                    I actively explore predictive modeling, experimentation, and real-world datasets.
+                </p>
+
+                <a href="Jahnvi_Paliwal_ML_CV.pdf" download class="resume-btn">
+                    View Resume
+                </a>
+            </div>
+
+            <!-- <div class="hero-image">
+                <img src="../images/profile.jpg" alt="Jahnvi Paliwal">
+            </div> -->
+        </section>
+
+
+
+        <!-- ACADEMIC FOCUS -->
+        <section class="research-focus">
+
+            <h2>Academic Focus</h2>
+            <div class="research-box">
+                <p>
+                    • Machine Learning (ML) for predictive modeling and data-driven decision making.<br>
+                    • Natural Language Processing (NLP) for contextual understanding and information retrieval.<br>
+                    • Deep Learning architectures for representation learning and complex pattern recognition.<br>
+                    • Multiple Human Pose Estimation using computer vision and spatio-temporal modeling.<br>
+                    • Time Series Analysis for forecasting and trend identification in real-world data.
+                </p>
+            </div>
+
+        </section>
+
+
+
+        <section class="research-focus">
+
+            <h2>Ongoing Research Work</h2>
+
+            <div class="research-box">
+                <p>
+                    <strong>AI-Based Vulnerability Lifetime & Network Security Analysis</strong><br><br>
+                    This ongoing research focuses on predicting vulnerability lifetimes and identifying security
+                    limitations of network nodes during the transition to post-quantum cryptography, specifically
+                    under CRYSTALS-Kyber conversion.
+                </p>
+
+                <p>
+                    <strong>Progress So Far</strong><br>
+                    • Defined problem scope around vulnerability lifetime and node-level security behavior<br>
+                    • Designed structured dataset schema for security and temporal risk indicators<br>
+                    • Creating custom datasets due to lack of publicly available labeled data<br>
+                    • Developing multiple test cases to capture time-dependent and vulnerability-specific features
+                </p>
+
+                <p>
+                    <strong>Key Observations</strong><br>
+                    • Vulnerability patterns vary significantly across different network node roles<br>
+                    • Temporal features are critical for modeling security degradation<br>
+                    • Dataset quality and feature design strongly impact model stability
+                </p>
+
+                <p>
+                    <em>Dataset construction, test-case expansion, and preliminary modeling experiments are currently ongoing.</em>
+                </p>
+            </div>
+
+
+            <!-- <div class="research-box">
+                <p>
+                    <strong>AI-Assisted Healthcare Analytics</strong><br><br>
+                    This project investigates deep learning approaches for medical image analysis with a
+                    focus on disease detection, model accuracy, and interpretability.
+                </p>
+
+                <p>
+                    <strong>Current Work</strong><br>
+                    • Image preprocessing and dataset analysis<br>
+                    • CNN architecture experimentation<br>
+                    • Evaluation of model reliability
+                </p>
+            </div> -->
+
+        </section>
+
+
+
+        <!-- RESEARCH EXPERIENCE -->
+        <section class="research-focus">
+            <h2>AI Developer Intern @ Proceedit | <small><small>Apr 2025 - Nov 2025</small></small></h2>
+            
+            <p>
+                During my internship at Proceedit, My work also included researching and evaluating advanced predictive algorithms for asset forecasting. 
+                My goal was to identify models that provide the best performance for real-world financial data, balancing accuracy and computational efficiency.
+                
+            </p>
+            <br>
+            <div class="research-box">
+                <h3>Model Research & Performance</h3>
+
+                <!-- CRT -->
+                <div class="model-performance">
+                    <div class="model-desc">
+                        <strong>Target Engineering & Transformation</strong><br>
+                        • Initiated experiments using target transformation techniques with CatBoost to stabilize predictions.<br>
+                        • Observed improved mid-range accuracy but consistent failures at extreme peak values.<br>
+                        • Analyzed distribution skewness to understand instability at high-magnitude targets.<br>
+                        • Applied logarithmic transformation to the target variable to reduce variance.<br>
+                        • Evaluated transformed targets for suitability across different predictive models.
+                    </div>
+                    <div class="model-graph">
+                        <img src="../images/CRT_Chart.png" alt="CRT Performance Graph">
+                    </div>
+                </div>
+
+                <!-- CatBoost -->
+                <div class="model-performance">
+                    <div class="model-desc">
+                        <strong>Gradient Boosting Model Experiments</strong><br>
+                        • Transitioned to XGBoost using log-transformed targets to improve peak handling.<br>
+                        • Tuned tree depth, learning rate, and regularization parameters for financial data behavior.<br>
+                        • Achieved smoother predictions across volatile regions with reduced overfitting.<br>
+                        • Identified limitations in capturing abrupt market spikes.<br>
+                        • Compared CatBoost and XGBoost performance using visual error plots.
+                        
+                    </div>
+                    <div class="model-graph">
+                        <img src="../images/CBT_Graph.png" alt="CatBoost Performance Graph">
+                    </div>
+                </div>
+
+                <!-- XGBoost -->
+                <div class="model-performance">
+                    <div class="model-desc">
+                        <strong>Autoencoder-Based Feature Learning</strong><br>
+                        • Designed Autoencoder architectures to learn latent representations of asset dynamics.<br>
+                        • Integrated Autoencoder outputs with CatBoost for enhanced feature representation.<br>
+                        • Observed strong performance on higher peaks with reduced noise sensitivity.<br>
+                        • Noted consistent underperformance on lower-end value ranges.<br>
+                        • Evaluated Autoencoder + XGBoost pipelines, which failed to converge reliably.
+    <!-- </p> -->
+                    </div>
+                    <div class="model-graph">
+                        <img src="../images/XGB_Chart.png" alt="XGBoost Performance Graph">
+                    </div>
+                </div>
+
+                <!-- FinRL -->
+                <div class="model-performance">
+                    <div class="model-desc">
+                        <strong>Deep Learning Architecture Design</strong><br>
+                        • Designed a custom ResNet sandwich architecture to capture hierarchical temporal dependencies in asset time-series data.<br>
+                        • Developed a peak-focused neural network to specifically learn extreme value behavior in the target distribution.<br>
+                        • Trained base models and peak-specialized networks in parallel on identical datasets to ensure fair comparison.<br>
+                        • Merged outputs from parallel models to improve prediction stability across peaks, troughs, and regime shifts.<br>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </section>
+
+
+        
+        
+
+    </main>
+
+</body>
+</html>
