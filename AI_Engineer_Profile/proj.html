@@ -49,21 +49,17 @@
 <main class="main-content projects-container">
 
     <!-- PROJECT 1 -->
-    <section class="project-box">
+    <!-- <section class="project-box">
         <div class="project-left">
-            <h2>Product Performance Retrieval Agent</h2>
+            <h2>NewsRoom</h2>
 
             <p>
                 <h3>Problem Statement</h3>
-                Raw financial CSV datasets are difficult to interpret, 
-                analyze, and forecast without technical expertise, 
-                limiting data-driven decision-making.
+                Room
             </p>
             <p>
                 <h3>Solution Overview</h3>
-                This system transforms financial CSV files into meaningful insights by 
-                automatically generating metadata, visual analytics, 
-                current value explanations using RAG, and future value predictions using deep learning models.
+                An 
             </p>
             <p>
                 <h3>Progress so far . . .</h3>
@@ -77,7 +73,7 @@
             </p>
 
             <!-- Tech Stack -->
-            <div class="tech-stack">
+            <!-- <div class="tech-stack">
                 <span>OpenAI GPT-3</span>
                 <span>RAG</span>
                 <span>TF-IDF</span>
@@ -99,9 +95,68 @@
             <img src="../images/AI_logo.png" alt="Project Screenshot">
 
             <div class="project-links">
-                <a href="https://github.com/JahnviPaliwal/Product-Performance-Retrieval-Agent" target="_blank">GitHub</a>
+                <a href="https://github.com/JahnviPaliwal/Product-Performance-Retrieval-Agent" target="_blank">GitHub</a> -->
                 <!-- <a href="#" target="_blank">Live Demo</a>
                 <a href="#" target="_blank">Paper</a> -->
+            <!-- </div>
+        </div>
+    </section> --> -->
+    
+    <!-- PROJECT 1 -->
+    <section class="project-box">
+        <div class="project-left">
+            <h2>Product Performance Retrieval Agent</h2>
+
+            <p>
+                <h3>Problem Statement</h3>
+                Raw financial CSV datasets are difficult to interpret, 
+                analyze, and forecast without technical expertise, 
+                limiting data-driven decision-making.
+            </p>
+            <p>
+                <h3>Solution Overview</h3>
+                An AI-powered agent that automatically profiles Excel/CSV datasets,suggests insights, performs analysis, 
+                visualizes results, and provides a data quality score with interactive Q&A.
+            </p>
+            <p>
+                <h3>How I Solved the Problem</h3>
+                I designed a modular pipeline that begins with a dataset profiler extracting metadata like column types, 
+                missing values, cardinality, and distributions. This metadata is sent to an LLM reasoning layer 
+                (Groq LLaMA 3.1), which dynamically suggests six relevant insights tailored to the dataset. 
+                An insight router maps LLM recommendations to pre-defined deterministic Python functions that 
+                perform analysis such as outlier detection, correlation analysis, distribution inspection, and missing 
+                value evaluation. The results are visualized automatically using Streamlit charts, and a data quality 
+                score quantifies the reliability of the dataset. The system also supports follow-up Q&A, allowing users 
+                to query results interactively. Users enter their own API key, ensuring secure and private LLM integration. 
+                The pipeline is optimized to prevent stale results when switching datasets and maintains efficient token usage.
+            </p>
+
+            <!-- Tech Stack -->
+            <div class="tech-stack">
+                <span>OpenAI GPT-3</span>
+                <span>RAG</span>
+                <span>Python</span>
+                <span>Streamlit</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Groq API</span>
+                <span>LLaMA 3.1</span>
+                <span>Deterministic analysis functions Forest</span>
+                <span>Automatic charting</span>
+                <span>TensorFlow</span>
+                <span>Session-aware state management</span>
+                <span>Follow-up interactive Q&A</span>
+                <span>CSV and Excel file handling</span>
+            </div>
+        </div>
+
+        <div class="project-right">
+            <img src="../images/AI_logo.png" alt="Project Screenshot">
+
+            <div class="project-links">
+                <a href="https://github.com/JahnviPaliwal/Product-Performance-Retrieval-Agent" target="_blank">GitHub</a>
+                <a href="https://jd-data-retrieval-agent.streamlit.app/" target="_blank">Live Demo</a>
+                <a href="https://drive.google.com/file/d/15SawWTbBQvPor4UpLHn8isWMVbgibpEI/view?usp=sharing" target="_blank">Detailed Report</a>
             </div>
         </div>
     </section>
@@ -261,3 +316,4 @@
 
 </body>
 </html>
+
