@@ -249,3 +249,29 @@ body {
     border: 1px solid var(--box-bg);
     border-radius: 6px;
 }
+
+
+.research-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* responsive for small screens */
+}
+
+.research-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: var(--heading-dark-blue);
+    color: var(--bg-white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.research-btn:hover {
+    background-color: var(--subheading-light-blue);
+    color: var(--heading-dark-blue);
+}
+
+
