@@ -87,6 +87,46 @@
 
             <h2>Ongoing Research Work</h2>
 
+
+            <div class="research-box">
+                <p>
+                    <strong>Physics-Informed Machine Learning for Phase Retrieval</strong><br><br>
+                    Phase retrieval is a fundamental inverse problem in nonlinear optics, where detectors measure only intensity and the phase of a wave remains unobserved. 
+                    Traditional methods often fail in nonlinear media due to strong coupling between phase and intensity. 
+                    This project addresses nonlinear phase retrieval using a <strong>physics-informed machine learning framework</strong> that integrates deep learning with <strong>NLSE-based physical constraints</strong> to improve prediction accuracy and robustness.
+                </p>
+            
+                <p>
+                    <strong>Methodology & Approach</strong><br>
+                    • Generated synthetic datasets using the <strong>split-step Fourier method</strong>, simulating intensity profiles at multiple propagation distances.<br>
+                    • Designed and trained a <strong>multilayer perceptron</strong> to predict the phase at a secondary plane from two intensity measurements.<br>
+                    • Incorporated a <strong>physics-based regularizer</strong> derived from the 1D nonlinear Schrödinger equation to enforce consistency with physical laws.<br>
+                    • Applied <strong>Monte Carlo dropout</strong> during inference to quantify predictive uncertainty and identify ambiguous regions.
+                </p>
+            
+                <p>
+                    <strong>Results & Observations</strong><br>
+                    • Achieved near-perfect intensity reconstruction and low phase errors for in-distribution data.<br>
+                    • Demonstrated robustness to out-of-distribution inputs, with meaningful uncertainty estimates correlating with prediction ambiguity.<br>
+                    • Outperformed classical Gerchberg–Saxton algorithm in both accuracy and stability, showcasing the advantage of combining data-driven learning with physical priors.
+                </p>
+            
+                <p>
+                    <strong>Significance</strong><br>
+                    • Provides a framework for solving ill-posed inverse problems in nonlinear wave propagation.<br>
+                    • Highlights the potential of physics-informed machine learning for uncertainty-aware modeling in optical systems.
+                </p>
+            
+                <!-- Optional figure -->
+                <!--
+                <div class="model-graph">
+                    <img src="../images/phase_prediction.png" alt="Predicted vs True Phase">
+                </div>
+                -->
+             </div>
+
+            
+            
             <div class="research-box">
                 <p>
                     <strong>AI-Based Vulnerability Lifetime & Network Security Analysis</strong><br><br>
@@ -218,3 +258,4 @@
 
 </body>
 </html>
+
