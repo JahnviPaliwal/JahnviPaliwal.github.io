@@ -257,7 +257,6 @@
         
             <!-- Tech Stack -->
             <section class="tech-stack-section">
-                <h3><strong>Tech Stack</strong></h3>
                 <div class="tech-stack">
                     <span>Python</span>
                     <span>OpenCV</span>
@@ -333,8 +332,71 @@
         </div>
     </section>
 
+    <!-- PROJECT 3 -->
 
-     <!-- PROJECT 3 -->
+    <section class="project-box"> 
+        <div class="project-left">
+            <h2>Open-Vocabulary Object Detection Study</h2>
+    
+            <p>
+                <h3>Problem Statement</h3>
+                Traditional object detection models are limited to predefined categories, 
+                making it difficult to detect unseen or custom objects dynamically. 
+                Evaluating speed, accuracy, and generalization across models for real-time 
+                video analysis is also challenging.
+            </p>
+            <p>
+                <h3>Solution Overview</h3>
+                Implemented a real-time, zero-shot object detection pipeline using OWL-ViT, 
+                enabling dynamic text-based queries without reliance on fixed training datasets. 
+                YOLOv8 was used as a benchmark for comparison. The system processes video frames, 
+                draws bounding boxes, logs per-class detections and confidence scores, and allows 
+                side-by-side visual and statistical analysis of both models.
+            </p>
+            <p>
+                <h3>How I Solved the Problem</h3>
+                I developed a modular pipeline that captures video frames from Google Drive, 
+                resizes them for faster processing, and performs object detection using both 
+                YOLOv8 and OWL-ViT. Each frame’s predictions are annotated with bounding boxes 
+                and confidence scores. A CSV log records per-frame, per-class detections for 
+                statistical analysis. Using Python libraries like pandas, matplotlib, and seaborn, 
+                I generated detection counts, confidence distribution plots, false positive analysis, 
+                and T-test statistical comparison. Output videos show side-by-side model predictions 
+                for qualitative evaluation. The pipeline is optimized with GPU acceleration, mixed 
+                precision, and frame subsampling to balance speed and accuracy.
+            </p>
+    
+            <!-- Tech Stack -->
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>PyTorch</span>
+                <span>Transformers</span>
+                <span>OpenCV</span>
+                <span>Pillow</span>
+                <span>Matplotlib</span>
+                <span>Seaborn</span>
+                <span>Hugging Face OWL-ViT</span>
+                <span>YOLOv8 (Ultralytics)</span>
+                <span>Google Colab</span>
+                <span>GPU Acceleration</span>
+                <span>Zero-Shot Object Detection</span>
+                <span>CSV Logging</span>
+                <span>Video Annotation & Frame Processing</span>
+            </div>
+        </div>
+    
+        <div class="project-right">
+            <img src="../images/object_detection_demo.png" alt="Project Screenshot">
+    
+            <div class="project-links">
+                <a href="https://github.com/JahnviPaliwal/Open-Vocabulary-Object-Detection-Study" target="_blank">View code on GitHub</a>
+                <!-- <a href="https://colab.research.google.com/drive/your_colab_notebook_link" target="_blank">Live Demo</a> -->
+                <a href="https://drive.google.com/file/d/1XyTPMOjWSePmSW8oHYamA9q1GqU87zFQ/view?usp=sharing" target="_blank">View Report</a>
+            </div>
+        </div>
+    </section>
+
+     <!-- PROJECT 4 -->
     
     <section class="project-box">
         <div class="project-left">
@@ -387,6 +449,7 @@
 
 </body>
 </html>
+
 
 
 
