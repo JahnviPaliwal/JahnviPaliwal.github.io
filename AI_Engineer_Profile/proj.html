@@ -214,6 +214,77 @@
     </section>
 
 
+    
+     <section class="project-box">
+        <div class="project-left">
+            <h2>Cross-Camera Human Identification System</h2>
+        
+            <!-- Problem Statement -->
+            <section class="problem-statement">
+                <h3><strong>Problem Statement</strong></h3>
+                <p>
+                    Multi-camera human tracking in dynamic environments is challenging due to varying viewpoints, 
+                    occlusions, and lighting conditions. Existing systems often fail to maintain consistent identities 
+                    across multiple cameras without relying on facial recognition.
+                </p>
+            </section>
+        
+            <!-- Solution Overview -->
+            <section class="solution-overview">
+                <h3><strong>Solution Overview</strong></h3>
+                <p>
+                    Developed a view-invariant person re-identification pipeline that combines YOLOv8 detection, 
+                    BoT-SORT multi-object tracking, color histogram embeddings, pose-aware spatial features, and 
+                    temporal trajectory encoding. The system matches identities across camera views and outputs videos 
+                    with consistent global IDs while preserving the original footage.
+                </p>
+            </section>
+        
+            <!-- How I Solved the Problem -->
+            <section class="solution-details">
+                <h3><strong>How I Solved the Problem</strong></h3>
+                <p>
+                    The pipeline starts with YOLOv8 detecting human players in each video feed. BoT-SORT assigns 
+                    temporary track IDs within each camera. For cross-camera association, I extracted color histogram 
+                    embeddings for each track and incorporated motion-consistency via temporal trajectory comparison. 
+                    A matching algorithm based on Bhattacharyya distance and cosine similarity aligns tracks across 
+                    camera views, producing a global ID map. The pipeline outputs separate MP4 files for each camera 
+                    with bounding boxes and global IDs overlaid, leaving the original videos unchanged. Evaluation 
+                    metrics include average cosine similarity, coverage of matched tracks, track length statistics, 
+                    and motion stability.
+                </p>
+            </section>
+        
+            <!-- Tech Stack -->
+            <section class="tech-stack-section">
+                <h3><strong>Tech Stack</strong></h3>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>Ultralytics YOLOv8</span>
+                    <span>BoT-SORT</span>
+                    <span>NVIDIA T4 GPU</span>
+                    <span>NumPy</span>
+                    <span>Streamlit (optional for visualization)</span>
+                    <span>Bhattacharyya distance & cosine similarity</span>
+                    <span>Temporal trajectory encoding</span>
+                    <span>Video I/O (MP4 output)</span>
+                </div>
+            </section>
+
+    <!-- Optional Images / Diagrams -->
+            <div class="project-right">
+                <img src="../images/I_Brawl_Monitor_Logo.png" alt="Project Screenshot">
+    
+                <div class="project-links">
+                    <a href="https://github.com/JahnviPaliwal/Intelligent_Brawl_monitor">View code on GitHub</a>
+                    <!-- <!-- <a href="#">Working Sample</a> -->
+                    <a href="https://drive.google.com/file/d/1xKj6DjLxfcQk4eSrdi1lPut8xl6K-BMs/view?usp=sharing">View Report</a> -->
+                </div>
+            </div>
+        </div>
+     </section>    
+
     <!-- PROJECT 2 -->
     <section class="project-box">
         <div class="project-left">
@@ -316,5 +387,6 @@
 
 </body>
 </html>
+
 
 
