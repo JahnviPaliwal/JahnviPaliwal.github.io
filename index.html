@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -22,5 +22,1940 @@
 
 </section>
 
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jahnvi Paliwal — AI Engineer & Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  
+ :root {
+  --bg: #ffffff;
+  --bg2: #f8f6f3;
+
+  --surface: rgba(214, 184, 151, 0.85);
+  --surface2: #f4f1ed;
+
+  --border: #e6ddd4;
+  --border2: #efe8e1;
+
+  --accent: #5c4033;
+  --accent2: #3e2723;
+  --accent3: #8d6e63;
+
+  --gold: #c49a4a;
+  --gold2: #f3e1b5;
+
+  --text: #1c1917;
+  --text2: #44403c;
+  --text3: #78716c;
+
+  --glow: rgba(92, 64, 51, 0.12);
+  --glow2: rgba(92, 64, 51, 0.05);
+}
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+  /* ── AMBIENT GLOW ── */
+  .ambient {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(100px);
+  }
+  .ambient-1 { width: 600px; height: 600px; background: rgba(124,109,250,0.07); top: -200px; left: -100px; }
+  .ambient-2 { width: 400px; height: 400px; background: rgba(226,201,126,0.05); bottom: 20%; right: -100px; }
+  .ambient-3 { width: 300px; height: 300px; background: rgba(124,109,250,0.05); top: 50%; left: 40%; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(214, 184, 151, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border2);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent2); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent3); }
+
+  .nav-cta {
+    display: flex;
+    gap: 12px;
+  }
+
+  .btn-outline {
+    padding: 8px 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent2); background: var(--glow2); }
+
+  .btn-filled {
+    padding: 8px 20px;
+    background: var(--accent);
+    border: none;
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .btn-filled:hover { background: var(--accent2); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    align-items: center;
+    gap: 60px;
+    padding: 120px 60px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--accent2);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--accent3);
+  }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+
+  .hero-bio {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text2);
+    max-width: 560px;
+    margin-bottom: 40px;
+  }
+
+  .hero-bio strong { color: var(--text); font-weight: 400; }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border2);
+    border: 1px solid var(--border2);
+    margin-top: 60px;
+  }
+  .stat-item {
+    padding: 24px;
+    background: var(--bg);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--accent2);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+
+  /* ── HERO RIGHT PANEL ── */
+  .hero-panel {
+    position: relative;
+    right:280px;
+  }
+  .hero-image-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .hero-image-wrap img {
+    width: 340px;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%) contrast(1.05);
+    border: 1px solid var(--border);
+  }
+  .hero-image-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 1px solid var(--border2);
+    z-index: -1;
+  }
+  .hero-image-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    background: var(--glow2);
+    border: 1px solid var(--border);
+    z-index: -2;
+  }
+
+  .hero-tags {
+    position: absolute;
+    top: -320px;
+    right: -300px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tag {
+    padding: 4px 12px;
+    background: rgba(214, 184, 151, 0.85);
+    border: 1px solid var(--border);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap;
+  }
+
+  /* ── SOCIAL BAR ── */
+  .social-bar {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid var(--border2);
+    color: var(--text3);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .social-link:hover { border-color: var(--accent); color: var(--accent2); }
+
+  /* ── SECTION TEMPLATE ── */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 60px;
+    border-top: 1px solid var(--border2);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 64px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  .section-title em { font-style: italic; color: var(--accent3); }
+
+  .section-count {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border2);
+    transition: background 0.3s;
+  }
+  .exp-item:first-child { border-top: 1px solid var(--border2); }
+  .exp-item:hover { background: var(--glow2); padding-left: 20px; }
+
+  .exp-date {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+    padding-top: 6px;
+  }
+
+  .exp-content {}
+  .exp-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    font-size: 12px;
+    color: var(--accent2);
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .exp-company span {
+    color: var(--text3);
+    font-size: 11px;
+  }
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .exp-bullets li {
+    font-size: 15px;
+    color: var(--text2);
+    padding-left: 16px;
+    position: relative;
+  }
+  .exp-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+  }
+  .exp-bullets strong { color: var(--text); font-weight: 400; }
+
+  .exp-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .tech-tag {
+    padding: 2px 10px;
+    background: rgba(214, 184, 151, 0.85);;
+    border: 1px solid var(--border);
+    font-size: 10px;
+    color: rgba(3, 0, 84, 0.85);;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── EDUCATION CARD ── */
+  .edu-card {
+    padding: 40px;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+    margin-top: 40px;
+  }
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+  .edu-institution { color: var(--accent2); font-size: 13px; margin-bottom: 8px; }
+  .edu-meta { color: var(--text3); font-size: 12px; }
+  .edu-cgpa {
+    text-align: right;
+  }
+  .edu-cgpa-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .edu-cgpa-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border2);
+    border: 1px solid var(--border2);
+  }
+
+  .project-card {
+    background: var(--bg);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .project-card:hover { background: var(--glow2); }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--accent);
+    transition: height 0.3s;
+  }
+  .project-card:hover::before { height: 100%; }
+
+  .project-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--border);
+    position: absolute;
+    top: 24px; right: 32px;
+    line-height: 1;
+  }
+
+  .project-category {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    padding-right: 60px;
+  }
+
+  .project-problem {
+    font-size: 13px;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+
+  .project-approach {
+    font-size: 12px;
+    color: var(--text2);
+    margin-bottom: 24px;
+    line-height: 1.7;
+    border-left: 2px solid var(--border);
+    padding-left: 16px;
+  }
+
+  .project-impact {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .impact-item {}
+  .impact-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .impact-label { font-size: 10px; color: var(--text3); letter-spacing: 0.05em; }
+
+  .project-stack {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 12px;
+  }
+  .proj-link {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .proj-link:hover { border-color: var(--accent2); }
+
+  /* ── RESEARCH ── */
+  .research-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .research-item {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border2);
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+    align-items: start;
+  }
+  .research-item:first-child { border-top: 1px solid var(--border2); }
+
+  .research-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .status-active {
+    background: rgba(124,109,250,0.1);
+    border: 1px solid rgba(124,109,250,0.3);
+    color: var(--accent3);
+  }
+  .status-ongoing {
+    background: rgba(226,201,126,0.1);
+    border: 1px solid rgba(226,201,126,0.3);
+    color: var(--gold);
+  }
+  .status-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .research-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .research-abstract {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .research-methodology {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .method-item {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--text2);
+    align-items: flex-start;
+  }
+  .method-item::before {
+    content: '◆';
+    color: var(--accent);
+    font-size: 8px;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .research-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
+  .research-panel-title {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 16px;
+  }
+  .research-result {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border2);
+  }
+  .research-result:last-child { margin-bottom: 0; border-bottom: none; }
+
+  /* ── SKILLS ── */
+  .skills-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border2);
+    border: 1px solid var(--border2);
+  }
+  .skill-group {
+    background: var(--bg);
+    padding: 32px;
+    transition: background 0.3s;
+  }
+  .skill-group:hover { background: rgba(211, 187, 160, 0.85); }
+  .skill-group-title {
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .skill-list li {
+    font-size: 13px;
+    color: var(--text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .skill-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--accent3);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .certi-controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .filter-btn {
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text3);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    border-color: var(--accent);
+    color: var(--accent2);
+    background: var(--glow2);
+  }
+
+  .certi-search {
+    flex: 1;
+    max-width: 280px;
+    padding: 6px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    outline: none;
+    border-radius: 2px;
+    margin-left: auto;
+  }
+  .certi-search::placeholder { color: var(--text3); }
+  .certi-search:focus { border-color: var(--accent); }
+
+  .certi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .certi-card {
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .certi-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(124,109,250,0.1);
+  }
+
+  .certi-img-wrap {
+    height: 160px;
+    overflow: hidden;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .certi-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .certi-card:hover .certi-img-wrap img { transform: scale(1.05); }
+
+  .certi-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(115, 87, 54, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+  }
+  .certi-card:hover .certi-overlay { opacity: 1; }
+
+  .certi-info {
+    padding: 16px;
+  }
+  .certi-issuer {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .certi-name {
+    font-size: 13px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  /* ── LIGHTBOX ── */
+  #lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(4,4,8,0.95);
+    backdrop-filter: blur(20px);
+    align-items: center;
+    justify-content: center;
+  }
+  #lightbox.open { display: flex; }
+  .lightbox-content {
+    position: relative;
+    max-width: 85vw;
+    max-height: 85vh;
+  }
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 1px solid var(--border);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -40px; right: 0;
+    background: none;
+    border: none;
+    color: var(--text2);
+    font-size: 24px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    transition: color 0.2s;
+  }
+  .lightbox-close:hover { color: var(--text); }
+  .lightbox-caption {
+    margin-top: 12px;
+    text-align: center;
+    color: var(--text2);
+    font-size: 12px;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: linear-gradient(to bottom, var(--bg), var(--bg2));
+  }
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text2);
+    margin-bottom: 32px;
+  }
+  .contact-intro strong { color: var(--text); font-weight: 300; }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contact-link-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid var(--border2);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    background: var(--surface);
+  }
+  .contact-link-item:hover {
+    border-color: var(--accent);
+    background: var(--glow2);
+  }
+  .contact-link-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--glow2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .contact-link-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .contact-link-handle {
+    font-size: 11px;
+    color: var(--accent2);
+    margin-top: 2px;
+  }
+
+  .contact-right {
+    padding-top: 8px;
+  }
+  .contact-field-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 8px;
+  }
+  .contact-field {
+    margin-bottom: 24px;
+  }
+  .contact-field a {
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+    transition: border-color 0.2s;
+  }
+  .contact-field a:hover { border-color: var(--accent); color: var(--accent2); }
+
+  .resume-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .resume-card {
+    padding: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .resume-card:hover { border-color: var(--accent); background: var(--glow2); }
+  .resume-card-type {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent2);
+  }
+  .resume-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .resume-card-action {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 60px;
+    border-top: 1px solid var(--border2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+  .footer-left {
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.05em;
+  }
+  .footer-left span { color: var(--accent2); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up {
+    animation: fadeUp 0.7s ease forwards;
+    opacity: 0;
+  }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+  .delay-5 { animation-delay: 0.5s; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+    .hero-panel { display: none; }
+    section { padding: 64px 24px; }
+    .exp-item { grid-template-columns: 1fr; gap: 8px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .skills-layout { grid-template-columns: 1fr 1fr; }
+    .certi-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-layout { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+    .research-item { grid-template-columns: 1fr; }
+    .resume-cards { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="ambient ambient-1"></div>
+<div class="ambient ambient-2"></div>
+<div class="ambient ambient-3"></div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">JD<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a class="btn-outline" href="https://jahnvipaliwal.github.io/AI_Engineer_Profile/Jahnvi_Paliwal_CV.pdf" target="_blank">AI Eng CV</a>
+    <a class="btn-filled" href="https://jahnvipaliwal.github.io/AI_Research_Profile/Jahnvi_Paliwal_ML_CV.pdf" target="_blank">Research CV</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="border-top:none; padding-top: 120px;">
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-up">AI Engineer & Researcher</div>
+    <h1 class="hero-name fade-up delay-1">
+      Jahnvi<br><em>Paliwal</em>
+    </h1>
+    <p class="hero-title fade-up delay-2">Intern @ VLED Lab, IIT Ropar . B.Tech CSE · 2027</p>
+    <p class="hero-bio fade-up delay-3">
+      I build things where code meets intelligence. I work across AI and software engineering, from training and improving ML models to building AI agents and integrating them into full-stack web applications. I’m comfortable handling frontend, backend, and databases, and I enjoy turning complex ideas into clean, usable products. If it involves smart systems, solid engineering, and actually shipping something real, count me in.
+    </p>
+    <div class="hero-actions fade-up delay-4">
+      <a class="btn-filled" href="#projects">View Projects</a>
+      <a class="btn-outline" href="#skills">Skills</a>
+    </div>
+
+    <div class="social-bar fade-up delay-5">
+      <a class="social-link" href="mailto:paliwaljnv08@gmail.com">✉ Email</a>
+      <a class="social-link" href="https://www.linkedin.com/in/jahnvipaliwal/" target="_blank">in LinkedIn</a>
+      <a class="social-link" href="https://github.com/jahnvipaliwal" target="_blank">⌥ GitHub</a>
+      <a class="social-link" href="https://www.kaggle.com/jahnvipaliwal" target="_blank">⧖ Kaggle</a>
+      <a class="social-link" href="https://www.hackerrank.com/profile/paliwaljnv08" target="_blank">⬡ HackerRank</a>
+      <a class="social-link" href="https://leetcode.com/u/RoE440RLSy/" target="_blank">↻ LeetCode</a>
+    </div>
+
+    <div class="hero-stats fade-up delay-5">
+      <div class="stat-item">
+        <div class="stat-num">ML</div>
+        <div class="stat-label">Time Series Analysis . Cross Domian ML Applications</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">AI</div>
+        <div class="stat-label">RAG . LLM's . Prompt Engineering . LangChain . LangGraph</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">CV</div>
+        <div class="stat-label">Human Pose Esitation . Qbject Recognition . 3D Object Coordinate Systems . YOLO</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-panel fade-up delay-1">
+    <!-- <div class="hero-image-wrap"> -->
+      <!-- <img src="https://jahnvipaliwal.github.io/images/profile.jpg" alt="Jahnvi Paliwal" onerror="this.style.background='#0d0d1a'; this.style.height='420px'; this.removeAttribute('src')"> -->
+      <div class="hero-tags">
+        <span class="tag">8 Major Projects</span>
+        <span class="tag">3 Internships</span>
+        <span class="tag">+15 Certificates</span>
+        <span class="tag">Research</span>
+        <span class="tag">HackerRank Golden Batch</span>
+        <span class="tag">Bertsmann's Scholar</span>
+      </div>
+    <!-- </div> -->
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Career</div>
+      <h2 class="section-title">Work <em>Experience</em></h2>
+    </div>
+    <div class="section-count">03</div>
+  </div>
+
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-date">May 2025 — Nov 2025</div>
+      <div class="exp-content">
+        <div class="exp-role">AI Developer Intern</div>
+        <div class="exp-company">BPaaS Proceedit <span>· Barcelona, Spain (Remote)</span></div>
+        <ul class="exp-bullets">
+          <li> Developed forecasting pipelines on daily financial time-series data (2010–2025), extracting seasonal, lag-based, andtemporal features to capture long-term behavioral patterns.</li>
+          <li>Engineered novel ML/Deep Learning ensemble architectures achieving <strong>98.7% accuracy</strong>, substantially outperforming single-model baselines on financial forecasting tasks.</li>
+          <li>Integrated predictive models via <strong>GraphQL API</strong>, enabling 50% workload redistribution across compute layers and reducing operational server costs significantly.</li>
+          <li>Conducted extensive research into advanced asset-forecasting algorithms — including CatBoost, XGBoost, custom ResNet sandwich architectures, and peak-focused neural networks — evaluating accuracy vs. computational trade-offs for production deployment.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tech-tag">CatBoost</span>
+          <span class="tech-tag">XGBoost</span>
+          <span class="tech-tag">Financial Reinforcement </span>
+          <span class="tech-tag"> Classification and Regression </span>
+          <span class="tech-tag">LSTM + ResNet</span>
+          <span class="tech-tag">GraphQL API</span>
+          <span class="tech-tag">Time-Series ML</span>
+          <span class="tech-tag">Python</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Apr 2025 — Jun 2025</div>
+      <div class="exp-content">
+        <div class="exp-role">AI Developer Intern</div>
+        <div class="exp-company">CollegeTips.in <span>· Mumbai, India (Remote)</span></div>
+        <ul class="exp-bullets">
+          <li>Developed a production-grade <strong>multilingual AI chatbot</strong> with voice I/O, backend integration (FastAPI + PostgreSQL), and live deployment.</li>
+          <li>Designed multiple front-end web interfaces using React and Flask; one interface was <strong>adopted directly for production</strong> use by the organization.</li>
+          <li>Worked on LLM-driven existing chatbot using Groq LLaMA, generating context-aware responses in HindiEnglish, and Hinglish for the DiggiBuddy elderly-support initiative.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Flask</span>
+          <span class="tech-tag">Ollama</span>
+          <span class="tech-tag">Groq</span>
+          <span class="tech-tag">Google Speech to text Services</span>
+          <span class="tech-tag">Multilingual NLP</span>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Nov — Dec 2024</div>
+      <div class="exp-content">
+        <div class="exp-role">Software Engineering Intern</div>
+        <div class="exp-company">Marvik Academy (MATE) <span>· Udaipur, India (On-site)</span></div>
+        <ul class="exp-bullets">
+          <li>Built a Flutter notes application with persistent local storage (SQLite) and custom productivity features — the app was <strong>adopted by staff and distributed to students</strong> institution-wide.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Dart</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">Mobile Dev</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Engineering Work</div>
+      <h2 class="section-title">Featured <em>Projects</em></h2>
+    </div>
+    <div class="section-count">06</div>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- P1 -->
+    <div class="project-card">
+      <div class="project-num">2026</div>
+      <div class="project-category">Agentic AI · Data Analytics</div>
+      <div class="project-title">Product Performance Retrieval Agent</div>
+      <div class="project-problem">Raw financial CSV datasets are opaque to non-technical stakeholders — critical insights buried in numbers with no pathway to automated reasoning or visualization.</div>
+      <div class="project-approach">Built a modular LLM-driven pipeline: a dataset profiler extracts metadata (types, cardinality, distributions), feeds a Groq LLaMA 3.1 reasoning layer that dynamically suggests 6 tailored insights, then routes them to deterministic Python analysis functions. Results are auto-visualized via Streamlit, scored for data quality, and made queryable through interactive follow-up Q&A.</div>
+      <div class="project-impact">
+        <div class="impact-item"><div class="impact-num">6</div><div class="impact-label">Auto Insights</div></div>
+        <div class="impact-item"><div class="impact-num">LLaMA<br>3.1</div><div class="impact-label">Reasoning Core</div></div>
+      </div>
+      <div class="project-stack">
+        <span class="tech-tag">LLaMA 3.1</span><span class="tech-tag">Groq API</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Pandas</span><span class="tech-tag">RAG</span>
+      </div>
+      <div class="project-links">
+        <a class="proj-link" href="https://github.com/JahnviPaliwal/Product-Performance-Retrieval-Agent" target="_blank">GitHub →</a>
+        <a class="proj-link" href="https://jd-data-retrieval-agent.streamlit.app/" target="_blank">Live Demo →</a>
+        <a class="proj-link" href="https://drive.google.com/file/d/15SawWTbBQvPor4UpLHn8isWMVbgibpEI/view?usp=sharing" target="_blank">Report →</a>
+      </div>
+    </div>
+
+
+    <!-- P1.2 -->
+     <div class="project-card">
+      <div class="project-num">2026</div>
+      <div class="project-category">RAG · Data Analytics</div>
+      <div class="project-title">Legal Document Intelligence System</div>
+      <div class="project-problem">Raw financial CSV datasets are opaque to non-technical stakeholders — critical insights buried in numbers with no pathway to automated reasoning or visualization.</div>
+      <div class="project-approach">Developed RAG-based pipelines to process large legal PDFs with structured retrieval workflows. Implemented chunking, embedding, and similarity search to improve response accuracy and optimized retrieval
+logic to support multi-document reasoning tasks.</div>
+      <div class="project-impact">
+        <div class="impact-item"><div class="impact-num">FAISS</div><div class="impact-label">Storage</div></div>
+        <div class="impact-item"><div class="impact-num">RAG</div><div class="impact-label">Context</div></div>
+      </div>
+      <div class="project-stack">
+        <span class="tech-tag">LLaMA 3.1</span><span class="tech-tag">Groq API</span><span class="tech-tag">LangChai</span><span class="tech-tag">Pandas</span><span class="tech-tag">RAG</span>
+      </div>
+      <div class="project-links">
+        <a class="proj-link" href="https://github.com/JahnviPaliwal/Legal-Document-Intelligence-Reasoning-System" target="_blank">GitHub →</a>
+        <!-- <a class="proj-link" href="https://jd-data-retrieval-agent.streamlit.app/" target="_blank">Live Demo →</a>
+        <a class="proj-link" href="https://drive.google.com/file/d/15SawWTbBQvPor4UpLHn8isWMVbgibpEI/view?usp=sharing" target="_blank">Report →</a> -->
+      </div>
+    </div>
+
+
+    <!-- P1.3 -->
+     <div class="project-card">
+      <div class="project-num">2026</div>
+      <div class="project-category">Reasoning AI · Graph</div>
+      <div class="project-title">Semantic Diffing for Evolving Knowledge Graphs</div>
+      <div class="project-problem">Raw financial CSV datasets are opaque to non-technical stakeholders — critical insights buried in numbers with no pathway to automated reasoning or visualization.</div>
+      <div class="project-approach">Built LLM-powered knowledge extraction pipelines generating temporal graphs from legal datasets. Engineered semantic diffing logic to detect contradictions across evolving documents and enabled fast
+entity-relation reasoning across large datasets.</div>
+      <div class="project-impact">
+        <div class="impact-item"><div class="impact-num">Neo4j</div><div class="impact-label">LLM</div></div>
+        <div class="impact-item"><div class="impact-num">LLaMA<br>3.1</div><div class="impact-label">Reasoning Core</div></div>
+      </div>
+      <div class="project-stack">
+        <span class="tech-tag">LLaMA 3.1</span><span class="tech-tag">Groq API</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Pandas</span><span class="tech-tag">RAG</span>
+      </div>
+      <div class="project-links">
+        <a class="proj-link" href="https://github.com/JahnviPaliwal/Semantic-Diffing-for-Evolving-Knowledge-Graphs" target="_blank">GitHub →</a>
+        <!-- <a class="proj-link" href="https://jd-data-retrieval-agent.streamlit.app/" target="_blank">Live Demo →</a>
+        <a class="proj-link" href="https://drive.google.com/file/d/15SawWTbBQvPor4UpLHn8isWMVbgibpEI/view?usp=sharing" target="_blank">Report →</a> -->
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- P2 -->
+    <div class="project-card">
+      <div class="project-num">2024</div>
+      <div class="project-category">Computer Vision · Safety AI</div>
+      <div class="project-title">Intelligent Brawl Monitor</div>
+      <div class="project-problem">Violence escalates without early warning, limiting timely intervention across public safety, workplace security, and women's safety scenarios.</div>
+      <div class="project-approach">Real-time video analytics pipeline using OpenCV for frame capture. CNN-based emotion models detect anger-related expressions; pose estimation (MediaPipe/OpenPose) identifies aggressive body stances. Rule-based fusion logic fires alerts only when both signals align — minimizing false positives. Automated email notification system for escalation.</div>
+      <div class="project-impact">
+        <div class="impact-item"><div class="impact-num">Real-<br>time</div><div class="impact-label">Processing</div></div>
+        <div class="impact-item"><div class="impact-num">Dual</div><div class="impact-label">Signal Fusion</div></div>
+      </div>
+      <div class="project-stack">
+        <span class="tech-tag">OpenCV</span><span class="tech-tag">MediaPipe</span><span class="tech-tag">CNN</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">Email Alerts</span>
+      </div>
+      <div class="project-links">
+        <a class="proj-link" href="https://github.com/JahnviPaliwal/Intelligent_Brawl_monitor" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="project-card">
+      <div class="project-num">2025</div>
+      <div class="project-category">Computer Vision · Re-ID</div>
+      <div class="project-title">Cross-Camera Human Identification System</div>
+      <div class="project-problem">Multi-camera human tracking in dynamic environments fails to maintain consistent identities across views without facial recognition — limiting surveillance scalability and privacy compliance.</div>
+      <div class="project-approach">View-invariant pipeline: YOLOv8 detects humans, BoT-SORT assigns per-camera track IDs, color histogram embeddings + temporal trajectory encoding enable cross-camera matching via Bhattacharyya distance & cosine similarity. Global ID map output as annotated MP4 per camera, original footage preserved.</div>
+      <div class="project-impact">
+        <div class="impact-item"><div class="impact-num">YOLOv8</div><div class="impact-label">Detection</div></div>
+        <div class="impact-item"><div class="impact-num">NVIDIA<br>T4</div><div class="impact-label">GPU Accelerated</div></div>
+      </div>
+      <div class="project-stack">
+        <span class="tech-tag">YOLOv8</span><span class="tech-tag">BoT-SORT</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Cosine Similarity</span><span class="tech-tag">NumPy</span>
+      </div>
+      <div class="project-links">
+        <a class="proj-link" href="https://github.com/JahnviPaliwal/Cross-Camera-Human-Identification-System" target="_blank">GitHub →</a>
+        <a class="proj-link" href="https://drive.google.com/file/d/1xKj6DjLxfcQk4eSrdi1lPut8xl6K-BMs/view?usp=sharing" target="_blank">Report →</a>
+      </div>
+    </div>
+
+    <!-- P4 -->
+    <div class="project-card">
+      <div class="project-num">2025</div>
+      <div class="project-category">NLP · Unsupervised ML</div>
+      <div class="project-title">Cognitive Stress Analysis from Speech</div>
+      <div class="project-problem">Cognitive stress shapes speech patterns but is difficult to measure objectively without intrusive methods or labeled data.</div>
+      <div class="project-approach">End-to-end Python pipeline performing speech recognition, acoustic signal processing, and linguistic feature engineering to capture speech rate, pitch, pause patterns, hesitation markers, and sentence complexity. K-Means clustering + Isolation Forest anomaly detection + cosine similarity quantify and compare stress indicators. Auto-generates interpretable CSV reports.</div>
+      <div class="project-impact">
+        <div class="impact-item"><div class="impact-num">Zero</div><div class="impact-label">Labels Required</div></div>
+        <div class="impact-item"><div class="impact-num">5+</div><div class="impact-label">Feature Classes</div></div>
+      </div>
+      <div class="project-stack">
+        <span class="tech-tag">librosa</span><span class="tech-tag">NLTK</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">Isolation Forest</span><span class="tech-tag">K-Means</span>
+      </div>
+      <div class="project-links">
+        <a class="proj-link" href="https://github.com/JahnviPaliwal/Cognitive-Stress-Analysis" target="_blank">GitHub →</a>
+        <a class="proj-link" href="https://jd-cognitive-stress-analysis.streamlit.app/" target="_blank">Live App →</a>
+      </div>
+    </div>
+
+    <!-- P5 -->
+    <div class="project-card">
+      <div class="project-num">2025</div>
+      <div class="project-category">Computer Vision · Research</div>
+      <div class="project-title">Open-Vocabulary Object Detection Study</div>
+      <div class="project-problem">Traditional detection models are bound to predefined categories — evaluating zero-shot generalization and real-time speed vs. accuracy trade-offs across architectures remains an open challenge.</div>
+      <div class="project-approach">Side-by-side benchmark of OWL-ViT (zero-shot, text-query driven) vs. YOLOv8 on video feeds. Per-frame bounding box annotation, CSV-logged confidence scores, GPU-accelerated with mixed precision. Statistical analysis (T-tests, distribution plots) surfaces false-positive patterns and model divergence.</div>
+      <div class="project-impact">
+        <div class="impact-item"><div class="impact-num">Zero-<br>shot</div><div class="impact-label">OWL-ViT</div></div>
+        <div class="impact-item"><div class="impact-num">2-way</div><div class="impact-label">Model Comparison</div></div>
+      </div>
+      <div class="project-stack">
+        <span class="tech-tag">OWL-ViT</span><span class="tech-tag">YOLOv8</span><span class="tech-tag">HuggingFace</span><span class="tech-tag">PyTorch</span><span class="tech-tag">Seaborn</span>
+      </div>
+      <div class="project-links">
+        <a class="proj-link" href="https://github.com/JahnviPaliwal/Open-Vocabulary-Object-Detection-Study" target="_blank">GitHub →</a>
+        <a class="proj-link" href="https://drive.google.com/file/d/1XyTPMOjWSePmSW8oHYamA9q1GqU87zFQ/view?usp=sharing" target="_blank">Report →</a>
+      </div>
+    </div>
+
+    <!-- P6 -->
+    <div class="project-card">
+      <div class="project-num">2025</div>
+      <div class="project-category">Full-Stack AI · Healthcare</div>
+      <div class="project-title">MediHelper</div>
+      <div class="project-problem">Reliable preliminary skin disease identification and healthcare cost estimation are hard to access — leading to delayed diagnosis and poor financial planning for patients.</div>
+      <div class="project-approach">Full-stack Django web application integrating two ML models: a CNN trained on skin condition datasets (vitiligo, acne, SJS, hyperpigmentation, nail psoriasis) for image-based disease detection, and a linear regression model for healthcare cost prediction from user-provided health parameters. Modular MVC architecture designed for extension (chatbot, medicine scanning).</div>
+      <div class="project-impact">
+        <div class="impact-item"><div class="impact-num">5</div><div class="impact-label">Conditions Detected</div></div>
+        <div class="impact-item"><div class="impact-num">2</div><div class="impact-label">AI Models</div></div>
+      </div>
+      <div class="project-stack">
+        <span class="tech-tag">Django</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">CNN</span><span class="tech-tag">Linear Regression</span><span class="tech-tag">Pandas</span>
+      </div>
+      <div class="project-links">
+        <a class="proj-link" href="https://github.com/JahnviPaliwal/MediHelper" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Technical Proficiency</div>
+      <h2 class="section-title">Skills & <em>Stack</em></h2>
+    </div>
+  </div>
+
+  <div class="skills-layout">
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <ul class="skill-list">
+        <li>Python</li>
+        <li>Java</li>
+        <li>C / C++</li>
+        <li>Golang</li>
+        <li>HTML · CSS · JS</li>
+        <li>Dart</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">ML / AI</div>
+      <ul class="skill-list">
+        <li>Machine Learning</li>
+        <li>Deep Learning</li>
+        <li>NLP</li>
+        <li>RAG & Agentic AI</li>
+        <li>LLMs (Groq, OpenAI)</li>
+        <li>CNNs</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Frameworks & Tools</div>
+      <ul class="skill-list">
+        <li>Django · Flask · FastAPI</li>
+        <li>TensorFlow · Keras</li>
+        <li>Scikit-learn</li>
+        <li>Docker</li>
+        <li>Git · Linux</li>
+        <li>OpenCV · MediaPipe</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Databases & APIs</div>
+      <ul class="skill-list">
+        <li>PostgreSQL</li>
+        <li>MongoDB</li>
+        <li>SQLite · SQL</li>
+        <li>Pandas · NumPy</li>
+        <li>REST & GraphQL</li>
+        <li>LaTeX</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Credentials</div>
+      <h2 class="section-title">Certifications <em>&</em> Credentials</h2>
+    </div>
+    <div class="section-count">14</div>
+  </div>
+
+  <div class="certi-controls">
+    <button class="filter-btn active" onclick="filterCerti('all', this)">All</button>
+    <button class="filter-btn" onclick="filterCerti('ml', this)">ML / AI</button>
+    <button class="filter-btn" onclick="filterCerti('programming', this)">Programming</button>
+    <button class="filter-btn" onclick="filterCerti('cloud', this)">Cloud & Infra</button>
+    <input class="certi-search" type="text" placeholder="Search certifications..." oninput="searchCerti(this.value)" id="certi-search">
+  </div>
+
+  <div class="certi-grid" id="certi-grid">
+
+    <div class="certi-card" data-cat="ml" data-name="Intro to Machine Learning Kaggle" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/kaggle- Intro to Machine Learning.png','Intro to Machine Learning · Kaggle')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/kaggle- Intro to Machine Learning.png" alt="Kaggle ML Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">Kaggle</div>
+        <div class="certi-name">Intro to Machine Learning</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="ml" data-name="Foundation of GenAI Udacity" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/foundation_of_genAI.jpeg','Foundation of Gen AI · Udacity')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/foundation_of_genAI.jpeg" alt="GenAI Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">Udacity</div>
+        <div class="certi-name">Foundation of Gen AI</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="ml" data-name="Machine Learning Python FreeCodeCamp" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/free_codeCamp_ML.jpeg','Machine Learning with Python · FreeCodeCamp')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/free_codeCamp_ML.jpeg" alt="FCC ML Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">FreeCodeCamp</div>
+        <div class="certi-name">Machine Learning with Python</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="ml" data-name="Fundamentals Generative AI GUVI" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/GUVI_img.jpg','Fundamentals of Generative AI · GUVI')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/GUVI_img.jpg" alt="GUVI GenAI Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">GUVI</div>
+        <div class="certi-name">Fundamentals of Generative AI</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="ml" data-name="NLP Fundamentals Infosys" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/NLP_Fuundamentals.jpeg','NLP Fundamentals · Infosys')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/NLP_Fuundamentals.jpeg" alt="NLP Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">Infosys</div>
+        <div class="certi-name">NLP Fundamentals</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="ml" data-name="NLP in Practice Infosys" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/NLP_in_practise.jpeg','NLP in Practice · Infosys')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/NLP_in_practise.jpeg" alt="NLP Practice Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">Infosys</div>
+        <div class="certi-name">NLP in Practice</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="programming" data-name="Design Thinking Infosys" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/Design_thinking.jpeg','Design Thinking · Infosys')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/Design_thinking.jpeg" alt="Design Thinking Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">Infosys</div>
+        <div class="certi-name">Design Thinking</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="programming" data-name="Python Basic HackerRank" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/Python(Basic).jpeg','Python Basic · HackerRank')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/Python(Basic).jpeg" alt="Python Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">HackerRank</div>
+        <div class="certi-name">Python Basic</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="programming" data-name="Java Basic HackerRank" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/java(Basic).jpeg','Java Basic · HackerRank')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/java(Basic).jpeg" alt="Java Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">HackerRank</div>
+        <div class="certi-name">Java Basic</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="programming" data-name="SQL Basic HackerRank" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/SQL(basic).jpeg','SQL Basic · HackerRank')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/SQL(basic).jpeg" alt="SQL Basic Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">HackerRank</div>
+        <div class="certi-name">SQL Basic</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="programming" data-name="SQL Intermediate HackerRank" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/SQL(intermediate).jpeg','SQL Intermediate · HackerRank')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/SQL(intermediate).jpeg" alt="SQL Intermediate Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">HackerRank</div>
+        <div class="certi-name">SQL Intermediate</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="programming" data-name="Introduction C Programming DataFlair" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/intro_to_C.jpeg','Introduction to C Programming · DataFlair')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/intro_to_C.jpeg" alt="C Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">DataFlair</div>
+        <div class="certi-name">Introduction to C Programming</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="ml" data-name="Introduction OpenCV DataFlair" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/intro_to_openCV.jpeg','Introduction to OpenCV · DataFlair')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/intro_to_openCV.jpeg" alt="OpenCV Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">DataFlair</div>
+        <div class="certi-name">Introduction to OpenCV</div>
+      </div>
+    </div>
+
+    <div class="certi-card" data-cat="cloud" data-name="Oracle OCI Foundation Associate" onclick="openLightbox('https://jahnvipaliwal.github.io/images/Certi/Oracle-Cloud_Foundation_Associate.png','OCI Foundation Associate · Oracle')">
+      <div class="certi-img-wrap">
+        <img src="https://jahnvipaliwal.github.io/images/Certi/Oracle-Cloud_Foundation_Associate.png" alt="Oracle Cert">
+        <div class="certi-overlay">View Certificate</div>
+      </div>
+      <div class="certi-info">
+        <div class="certi-issuer">Oracle</div>
+        <div class="certi-name">OCI Foundation Associate</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section id="research">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Academic Work</div>
+      <h2 class="section-title">Research <em>Investigations</em></h2>
+    </div>
+    <div class="section-count">02</div>
+  </div>
+
+  <div class="research-grid">
+
+    <div class="research-item">
+      <div>
+        <div class="research-status status-active">
+          <span class="status-dot"></span>
+          Active Research
+        </div>
+        <div class="research-title">Physics-Informed Machine Learning for Phase Retrieval in Nonlinear Wave Propagation</div>
+        <div class="research-abstract">
+          Phase retrieval is a fundamental inverse problem in nonlinear optics — detectors measure only intensity, while the phase of a wave remains unobservable. Traditional algorithms fail in nonlinear media due to strong coupling between phase and intensity. This work addresses the problem through a physics-informed ML framework that unifies deep learning with NLSE-based physical constraints.
+        </div>
+        <div class="research-methodology">
+          <div class="method-item">Generated synthetic training data using the split-step Fourier method, simulating intensity profiles at multiple propagation distances.</div>
+          <div class="method-item">Designed and trained a multilayer perceptron predicting phase at a secondary plane from two intensity measurements.</div>
+          <div class="method-item">Incorporated a physics-based regularizer derived from the 1D nonlinear Schrödinger equation (NLSE) to enforce physical consistency.</div>
+          <div class="method-item">Applied Monte Carlo dropout during inference for predictive uncertainty quantification in ambiguous regions.</div>
+        </div>
+        <div class="project-links" style="margin-top:0">
+          <a class="proj-link" href="https://github.com/JahnviPaliwal/Physics-Informed-ML-for-Phase-Retrieval-and-Control" target="_blank">Code →</a>
+          <a class="proj-link" href="https://drive.google.com/file/d/11E_w2MipYcXzh7LG_oeHhPqkjIll9Vre/view" target="_blank">Report →</a>
+        </div>
+      </div>
+      <div class="research-panel">
+        <div class="research-panel-title">Key Results</div>
+        <div class="research-result">Near-perfect intensity reconstruction and low phase errors on in-distribution data — validated across propagation regimes.</div>
+        <div class="research-result">Meaningful uncertainty estimates that correlate with prediction ambiguity — robustness demonstrated on out-of-distribution inputs.</div>
+        <div class="research-result">Outperforms classical Gerchberg–Saxton algorithm in both accuracy and stability, validating physics-prior integration.</div>
+        <div class="research-panel-title" style="margin-top:16px">Methods</div>
+        <div class="research-result">NLSE · Split-Step Fourier · MLP · Monte Carlo Dropout · Physics-informed Regularization</div>
+      </div>
+    </div>
+
+    <div class="research-item">
+      <div>
+        <div class="research-status status-ongoing">
+          <span class="status-dot"></span>
+          Ongoing
+        </div>
+        <div class="research-title">AI-Based Vulnerability Lifetime & Network Security Analysis under Post-Quantum Cryptography</div>
+        <div class="research-abstract">
+          This research investigates predicting vulnerability lifetimes and identifying security limitations of network nodes during the transition to post-quantum cryptography, specifically under CRYSTALS-Kyber conversion. The core challenge: no publicly available labeled datasets exist, requiring custom dataset construction.
+        </div>
+        <div class="research-methodology">
+          <div class="method-item">Defined problem scope around vulnerability lifetime prediction and node-level security degradation behavior under cryptographic transition.</div>
+          <div class="method-item">Designed structured dataset schema for security indicators and temporal risk features — custom datasets being constructed due to absence of public labeled data.</div>
+          <div class="method-item">Developing multiple test cases to capture time-dependent and vulnerability-specific features across different network node roles.</div>
+          <div class="method-item">Early observations show vulnerability patterns vary significantly across node roles; temporal features are critical for modeling security degradation.</div>
+        </div>
+      </div>
+      <div class="research-panel">
+        <div class="research-panel-title">Current Progress</div>
+        <div class="research-result">Problem scope & dataset schema defined. Custom dataset construction underway — no public labeled data exists for this domain.</div>
+        <div class="research-result">Test-case expansion ongoing. Preliminary modeling experiments to begin upon dataset stabilization.</div>
+        <div class="research-panel-title" style="margin-top:16px">Domain</div>
+        <div class="research-result">Post-quantum cryptography · CRYSTALS-Kyber · Network security · ML-based risk modeling · Temporal feature engineering</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section id="experience"
+  <div class="edu-card">
+    <div>
+      <div class="edu-degree">Bachelor of Technology, Computer Science</div>
+      <div class="edu-institution">Institute of Engineering and Technology · Mohanlal Sukhadiya University</div>
+      <div class="edu-meta">Udaipur, Rajasthan · Jun 2023 – Jun 2027</div>
+    </div>
+    <div class="edu-cgpa">
+      <div class="edu-cgpa-num">7.7</div>
+      <div class="edu-cgpa-label">CGPA</div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Let's <em>Connect</em></h2>
+    </div>
+  </div>
+
+  <div class="contact-layout">
+    <div>
+      <div class="contact-intro">
+        Open to <strong>research collaborations</strong>, <strong>AI engineering roles</strong>, and meaningful conversations about intelligent systems.
+      </div>
+
+      <div class="contact-links">
+        <a class="contact-link-item" href="mailto:paliwaljnv08@gmail.com">
+          <div class="contact-link-icon">✉</div>
+          <div>
+            <div class="contact-link-name">Email</div>
+            <div class="contact-link-handle">paliwaljnv08@gmail.com</div>
+          </div>
+        </a>
+        <a class="contact-link-item" href="https://www.linkedin.com/in/jahnvipaliwal/" target="_blank">
+          <div class="contact-link-icon">in</div>
+          <div>
+            <div class="contact-link-name">LinkedIn</div>
+            <div class="contact-link-handle">linkedin.com/in/jahnvipaliwal</div>
+          </div>
+        </a>
+        <a class="contact-link-item" href="https://github.com/jahnvipaliwal" target="_blank">
+          <div class="contact-link-icon">⌥</div>
+          <div>
+            <div class="contact-link-name">GitHub</div>
+            <div class="contact-link-handle">github.com/jahnvipaliwal</div>
+          </div>
+        </a>
+        <a class="contact-link-item" href="https://www.kaggle.com/jahnvipaliwal" target="_blank">
+          <div class="contact-link-icon">⧖</div>
+          <div>
+            <div class="contact-link-name">Kaggle</div>
+            <div class="contact-link-handle">kaggle.com/jahnvipaliwal</div>
+          </div>
+        </a>
+        <a class="contact-link-item" href="https://www.hackerrank.com/profile/paliwaljnv08" target="_blank">
+          <div class="contact-link-icon">⬡</div>
+          <div>
+            <div class="contact-link-name">HackerRank</div>
+            <div class="contact-link-handle">hackerrank.com/paliwaljnv08</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <div class="contact-field">
+        <div class="contact-field-label">Primary Email</div>
+        <a href="mailto:paliwaljnv08@gmail.com">paliwaljnv08@gmail.com</a>
+      </div>
+      <div class="contact-field">
+        <div class="contact-field-label">Location</div>
+        <span style="font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--text2)">Udaipur, Rajasthan, India</span>
+      </div>
+      <div class="contact-field">
+        <div class="contact-field-label">Status</div>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--text)">
+          <span style="width:8px;height:8px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite"></span>
+          Open to Opportunities
+        </span>
+      </div>
+
+      <div class="resume-cards">
+        <a class="resume-card" href="https://jahnvipaliwal.github.io/AI_Engineer_Profile/Jahnvi_Paliwal_CV.pdf" target="_blank">
+          <div class="resume-card-type">Resume</div>
+          <div class="resume-card-title">AI Engineer CV</div>
+          <div class="resume-card-action">Download PDF →</div>
+        </a>
+        <a class="resume-card" href="https://jahnvipaliwal.github.io/AI_Research_Profile/Jahnvi_Paliwal_ML_CV.pdf" target="_blank">
+          <div class="resume-card-type">Resume</div>
+          <div class="resume-card-title">Research / ML CV</div>
+          <div class="resume-card-action">Download PDF →</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">© 2025 <span>Jahnvi Paliwal</span> · Built with precision, not a template.</div>
+  <div class="footer-left" style="display:flex;gap:20px">
+    <a href="#hero" style="color:var(--text3);text-decoration:none;font-size:11px">↑ Back to top</a>
+    <span style="color:var(--border)">·</span>
+    <a href="https://github.com/jahnvipaliwal" target="_blank" style="color:var(--text3);text-decoration:none;font-size:11px">GitHub</a>
+    <span style="color:var(--border)">·</span>
+    <a href="https://www.linkedin.com/in/jahnvipaliwal/" target="_blank" style="color:var(--text3);text-decoration:none;font-size:11px">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+// Lightbox
+function openLightbox(src, caption) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-caption').textContent = caption;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// Cert filter
+function filterCerti(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('certi-search').value = '';
+  document.querySelectorAll('.certi-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function searchCerti(val) {
+  const q = val.toLowerCase();
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.filter-btn').classList.add('active');
+  document.querySelectorAll('.certi-card').forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    card.style.display = name.includes(q) ? '' : 'none';
+  });
+}
+
+// Scroll fade-in observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.project-card, .exp-item, .research-item, .certi-card, .skill-group').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+
+// Active nav highlight
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 100) current = section.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.style.color = link.getAttribute('href') === '#' + current ? 'var(--accent3)' : '';
+  });
+});
+</script>
 </body>
 </html>
